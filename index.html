@@ -1,0 +1,60 @@
+<html>
+	<head>
+		
+		<style>
+			body { margin: 0; overflow: hidden }
+			canvas { min-width: 100%; height: 100% }
+		</style>
+	</head>
+	<body>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/87/three.min.js"></script>
+		<script style="z-index:-100">
+            
+            var camera, scene, renderer, geometry, material, mesh;
+
+init();
+animate();
+        
+function init() {
+
+    
+    scene = new THREE.Scene();
+
+    camera = new THREE.PerspectiveCamera(10, window.innerWidth / window.innerHeight, 100, 10000);
+    camera.position.z = 1500;
+   
+    scene.add(camera);
+             
+
+    
+
+    renderer = new THREE.WebGLRenderer();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+
+    document.body.appendChild(renderer.domElement);
+    
+    
+    
+    
+
+}
+
+function animate() {
+
+   requestAnimationFrame(animate);
+    render();
+
+}
+
+function render() {
+
+   mesh.rotation.x += 0.01;
+    mesh.rotation.y += 0.02;
+
+   renderer.render(scene, camera);
+
+}
+         
+		</script>
+	</body>
+</html>
