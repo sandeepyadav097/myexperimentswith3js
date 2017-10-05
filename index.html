@@ -1,6 +1,6 @@
 <html>
 	<head>
-		
+		<title>My first three.js app</title>
 		<style>
 			body { margin: 0; overflow: hidden }
 			canvas { min-width: 100%; height: 100% }
@@ -25,7 +25,17 @@ function init() {
    
     scene.add(camera);
              
-
+geometry = new THREE.IcosahedronBufferGeometry(105, 0);
+  material = new THREE.MeshNormalMaterial();
+    mesh = new THREE.Mesh(geometry, material);
+    mesh.position.set(0,0,0);
+    scene.add(mesh);
+    
+    
+     geometry = new THREE.SphereBufferGeometry( 90, 1000, 1000 );
+material = new THREE.MeshBasicMaterial( {color: 0xffff00} );
+sphere = new THREE.Mesh( geometry, material );
+scene.add( sphere );
     
 
     renderer = new THREE.WebGLRenderer();
